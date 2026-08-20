@@ -28,13 +28,10 @@ class PatientController
     // GET /api/patients/{id}
     public function getPatientById(int $id): void
     {
-            if (!ctype_digit($id)) {
-            sendResponse(
-                400,
-                false,
-                "Invalid patient ID"
-            );
+            if (!ctype_digit((string)$id)) {
+        sendResponse(400, false, "Invalid patient ID");
         }
+        
 
         $id = (int) $id;
 
